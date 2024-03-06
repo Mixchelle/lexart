@@ -31,7 +31,7 @@ class UserService {
       const newUser = await User.create({
         username,
         email,
-        password: hashedPassword,
+        password: hashedPassword, 
       });
   
       return { message: 'Usuário criado com sucesso.', user: newUser };
@@ -40,6 +40,7 @@ class UserService {
       return { error: 'Erro ao criar novo usuário.' };
     }
   }
+  
 }
 
 export default UserService;

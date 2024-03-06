@@ -15,6 +15,7 @@ interface ProductDetails {
 }
 class ProductService {
     async createProduct(data: any): Promise<any> {
+      console.log('data', data)
       try {
         if (Array.isArray(data)) {
           // Estrutura 3
@@ -27,17 +28,26 @@ class ProductService {
               products.push(newProduct);
             }
           }
+          console.log('products 3', products)
           return products;
         } else if (data.details) {
           // Estrutura 2
           const { name, details, price } = data;
           const { brand, model, color } = details;
-          return await Product.create({ name, brand, model, price, color });
+
+          
+          const product = await Product.create({ name, brand, model, price, color });
+          console.log('product 2', product)
+
+          return product
         } else {
           // Estrutura 1
           const { name, brand, model, price, color } = data;
-          return await Product.create({ name, brand, model, price, color });
-        }
+        const product = await Product.create({ name, brand, model, price, color });
+        console.log('product 1', product)
+        return product
+
+      }
       } catch (error) {
         throw new Error('Could not create product');
       }

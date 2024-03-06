@@ -8,6 +8,7 @@ const index_1 = require("../utils/index");
 class UserController {
     static async login(req, res) {
         const { email, password } = req.body;
+        console.log('email:', email, 'senha:', password);
         try {
             const token = await UserService_1.default.login(email, password);
             if (typeof token !== 'string') {
@@ -22,9 +23,11 @@ class UserController {
     static async createUser(req, res) {
         try {
             const result = await UserService_1.default.createUser(req.body);
+            console.log('user:', req.body);
             if (result.error) {
                 return (0, index_1.errorHandler)(res, 400, result.error);
             }
+            console.log(result);
             return res.status(201).json(result);
         }
         catch (error) {

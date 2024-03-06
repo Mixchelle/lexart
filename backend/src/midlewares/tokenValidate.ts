@@ -1,15 +1,18 @@
 import { Request, Response, NextFunction } from 'express';
-import  util from '../utils/index'; 
+import util from '../utils/index';
 
 export async function authenticateToken(req: Request, res: Response, next: NextFunction): Promise<void> {
   const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
 
-  if (!token) {
+  console.log('dados req.headers', req.headers);
+  console.log('authHeader', authHeader);
+
+  if (!authHeader) {
     res.status(401).json({ error: 'Token not provided' });
-    return; 
+    return;
   }
 
+  const token = authHeader.split(' ')[1];
   try {
     const decoded = util.authToken(token);
     (req as any).user = decoded;
@@ -19,4 +22,3 @@ export async function authenticateToken(req: Request, res: Response, next: NextF
     return;
   }
 }
-

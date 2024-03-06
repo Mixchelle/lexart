@@ -5,6 +5,7 @@ import { errorHandler } from '../utils/index';
 class UserController {
   public static async login(req: Request, res: Response) {
     const { email, password } = req.body;
+    console.log('email:', email,  'senha:', password)
     try {
       const token = await UserService.login(email, password);
       if (typeof token !== 'string') {
@@ -19,9 +20,13 @@ class UserController {
   public static async createUser(req: Request, res: Response) {
     try {
       const result = await UserService.createUser(req.body);
+      console.log('user:', req.body)
+
       if (result.error) {
         return errorHandler(res, 400, result.error);
       }
+
+      console.log(result);
       return res.status(201).json(result);
     } catch (error) {
       return errorHandler(res, 500, 'Erro ao criar novo usuário.');

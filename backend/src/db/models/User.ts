@@ -6,7 +6,9 @@ export interface UserAttributes {
   username: string;
   email: string;
   password: string;
+ 
 }
+
 
 class User extends Model<UserAttributes> {
   public id!: number;
@@ -14,6 +16,7 @@ class User extends Model<UserAttributes> {
   public email!: string;
   public password!: string;
 }
+
 
 User.init(
   {

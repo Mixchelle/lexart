@@ -1,5 +1,6 @@
 {
   "version": 2,
   "builds": [
-    { "src": "src/**/*.ts", "use": "@now/node" }  ]
+    { "src": "src/**/*.js", "use": "@now/node" }
+  ]
 }

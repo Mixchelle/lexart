@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "seu_usuario",
+    "password": "sua_senha",
+    "database": "nome_do_banco_de_dados",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "seu_usuario",
+    "password": "sua_senha",
+    "database": "nome_do_banco_de_dados",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "seu_usuari",
+    "password": "sua_senha",
+    "database": "nome_do_banco_de_dados",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  }
+}

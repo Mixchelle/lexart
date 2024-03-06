@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "lexart.teste",
+    "password": "lexart.teste",
+    "database": "lexart.teste.db",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "lexart.teste",
+    "password": "lexart.teste",
+    "database": "lexart.teste.db",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "lexart.teste",
+    "password": "lexart.teste",
+    "database": "lexart.teste.db",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  }
+}
